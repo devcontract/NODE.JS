@@ -55,15 +55,6 @@ Now lets install Node JS.Use this command in terminal:
 brew install node
 ```
 
-Now we need to download repo from github https://github.com/devcontract/buy.git lets say we want to have it in ~/Documents/server/repo :
-
-```
-mkdir ~/Documents/server/
-cd ~/Documents/server/
-svn export https://github.com/devcontract/buy.git/branches/login_access_point/node_lessons/signup3_post_verification_mongo_expiry_config/ 
-cd signup3_post_verification_mongo_expiry_config/
-```
-
 Install node packet manager if it is not installed :
 
 ```
@@ -100,9 +91,9 @@ You should be able to access your server:
 http://127.0.0.1:3000/user/signup
 ```
 
-## Authors
 
-* **Konstantin Kuzmenko** - *Node JS example * 
+
+ *Node JS example * 
 
 ## License
 
@@ -110,4 +101,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Some of the material was taken from here https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w 
