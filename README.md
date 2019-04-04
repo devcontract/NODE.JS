@@ -91,9 +91,13 @@ You should be able to access your server:
 http://127.0.0.1:3000/user/signup
 ```
 
+## Author 
+
+School 
+
+**Feel free** to use these materials for edicational or any other purpose. 
 
 
- *Node JS example * 
 
 ## License
 
