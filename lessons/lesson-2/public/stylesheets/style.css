@@ -5,16 +5,7 @@ body {
   background: #0368cf;
   min-width:215px;
 }
-
-body.static.join .navbar-inner {
-
-}
-.account-extras{
-  text-align:center;
-}
-
-.account-extras a:hover {
-  font-size:13px;
+a,a:hover{
   color:white;
 }
 
@@ -23,6 +14,12 @@ body.static.join .navbar-inner {
   text-align:center;
 
 
+}
+
+.header{
+  color:white;
+  text-align:center;
+  margin: 40px 0;
 }
 
 input[type=checkbox]{
@@ -51,284 +48,35 @@ input[name=lastname]{
 }
 
 .signup-form{
-
-
-
   margin: 0 auto;
+  width:422px;
   height:auto;
   padding:24px;
   background-color:white;
-
-
+  border-radius:5px;
 
 }
 
+.signin-form{
+  margin: 0 auto;
+  width:400px;
+  height:auto;
+  padding:24px;
+  background-color:white;
+  border-radius:5px;
+
+}
+
+
 .footer{
+  margin:0 auto;
+  width:400px;
+  margin-top:30px;
   color:white;
 }
 
-.session, .signup-session {
-  max-width: 400px;
-  margin: 40px auto
-}
 
-.session h2.header, .signup-session h2.header {
-  margin-bottom: 40px;
-  height: 34px;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.13;
-  text-align: center;
-  color: #fff
-}
 
-.session label, .signup-session label {
-  color: #484c57;
-  font-size: 12px;
-  font-weight: 500
-}
 
-.session .btn-primary, .signup-session .btn-primary {
-  color: #fff;
-  padding: 1em 2em;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1d90cb), to(#0e86c4));
-  background-image: -webkit-linear-gradient(#1d90cb, #0e86c4);
-  background-image: linear-gradient(#1d90cb, #0e86c4);
-  border-color: #137dba;
-  font-size: 11px;
-  text-transform: uppercase;
-  height: 42px;
-  letter-spacing: .05em;
-  border-radius: 2px;
-  -webkit-transition: all .15s ease;
-  transition: all .15s ease
-}
-
-.session .btn-primary:hover, .signup-session .btn-primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0e86c4), to(#0e86c4));
-  background-image: -webkit-linear-gradient(#0e86c4, #0e86c4);
-  background-image: linear-gradient(#0e86c4, #0e86c4);
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
-  box-shadow: 0 2px 1px rgba(0, 0, 0, .1)
-}
-
-.session .btn-primary .control-group:last-child, .signup-session .btn-primary .control-group:last-child {
-  margin-bottom: 0
-}
-
-.session .signup-button, .signup-session .signup-button {
-  width: 100%
-}
-
-.session .control-group, .signup-session .control-group {
-  margin-bottom: 5px
-}
-
-.session .alert, .signup-session .alert {
-  border: 0;
-  border-radius: 0;
-  padding: 10px 40px;
-  margin: 10px -40px
-}
-
-.session h2, .signup-session h2 {
-  font-size: 24px;
-  margin: 10px 0 20px
-}
-
-.session .account-form, .signup-session .account-form {
-  background: #fff;
-  -webkit-box-shadow: 0 1px 46px -4px rgba(0, 0, 0, .28);
-  box-shadow: 0 1px 46px -4px rgba(0, 0, 0, .28);
-  border-radius: 4px
-}
-
-.session .account-form .form, .signup-session .account-form .form {
-  padding: 32px 24px
-}
-
-.session .account-form h2, .signup-session .account-form h2 {
-  font-weight: 400
-}
-
-.session .account-form .first, .signup-session .account-form .first, .session .account-form .last, .signup-session .account-form .last {
-  width: 40%;
-  display: inline-block
-}
-
-.session .account-form .first input, .signup-session .account-form .first input, .session .account-form .last input, .signup-session .account-form .last input {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 42px;
-  border-radius: 2px 0 0 2px
-}
-
-.session .account-form .first input:focus, .signup-session .account-form .first input:focus, .session .account-form .last input:focus, .signup-session .account-form .last input:focus {
-  z-index: 10;
-  position: relative
-}
-
-.session .account-form hr, .signup-session .account-form hr {
-  margin: 20px -40px
-}
-
-.session .account-form .last, .signup-session .account-form .last {
-  margin-left: -5px;
-  width: 60%
-}
-
-.session .account-form .last input, .signup-session .account-form .last input {
-  border-radius: 0 2px 2px 0
-}
-
-.session .account-form .controls:last-child, .signup-session .account-form .controls:last-child {
-  overflow: hidden
-}
-
-.session .account-form .terms, .signup-session .account-form .terms {
-  color: #9196aa;
-  font-size: 12px;
-  line-height: 20px;
-  margin: 0 0 15px;
-  line-height: 21px
-}
-
-.session .account-form .terms a, .signup-session .account-form .terms a {
-  color: #0667d0;
-  text-decoration: underline
-}
-
-.session .account-form .terms_error, .signup-session .account-form .terms_error {
-  color: #0c0c0c;
-  font-size: 11px;
-  margin: 0 0 15px;
-  border-top: 1px solid rgba(221, 93, 76, .2);
-  clear: both;
-  padding-top: 10px;
-  font-weight: 700
-}
-
-.session .account-form .two-factor, .signup-session .account-form .two-factor {
-  margin: 0 -24px 20px
-}
-
-.session .account-form .signup-tabs, .signup-session .account-form .signup-tabs {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1
-}
-
-.session .account-form .signup-tabs .signup-tab, .signup-session .account-form .signup-tabs .signup-tab {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 50px;
-  padding-top: 2px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #7d95b6;
-  background-color: #f9fbfc
-}
-
-.session .account-form .signup-tabs .signup-tab svg, .signup-session .account-form .signup-tabs .signup-tab svg {
-  margin-right: 10px;
-  height: 15px
-}
-
-.session .account-form .signup-tabs .signup-tab.active-tab, .signup-session .account-form .signup-tabs .signup-tab.active-tab {
-  color: #0667d0;
-  background-color: #fff;
-  margin-right: 1px
-}
-
-.session .account-form .signup-tabs .signup-tab:not(.active-tab), .signup-session .account-form .signup-tabs .signup-tab:not(.active-tab) {
-  border-bottom: solid 1px #d4dce4;
-  border-left: solid 1px #d4dce4;
-  cursor: pointer
-}
-
-.session .account-form.step-two h3, .signup-session .account-form.step-two h3 {
-  margin-top: 0
-}
-
-.session.verify, .verify.signup-session {
-  text-align: center;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 46px -4px rgba(0, 0, 0, .28);
-  box-shadow: 0 1px 46px -4px rgba(0, 0, 0, .28);
-  border-radius: 4px;
-  padding: 20px 40px
-}
-
-.session.verify ul, .verify.signup-session ul {
-  margin: 0;
-  padding-top: 10px
-}
-
-.session.verify h2, .verify.signup-session h2 {
-  margin-bottom: 10px
-}
-
-.session.verify li, .verify.signup-session li {
-  list-style: none;
-  margin: 0 0 15px
-}
-
-.session.verify img, .verify.signup-session img {
-  height: 80px;
-  margin: 40px 0 0
-}
-
-.session.verify hr, .verify.signup-session hr {
-  margin: 35px 0
-}
-
-.session.verify p, .verify.signup-session p {
-  font-size: 16px;
-  color: #484c57
-}
-
-.signup-session {
-  margin-bottom: 0;
-  max-width: none
-}
-
-.signup-session .alert {
-  border: 0;
-  border-radius: 0;
-  padding: 10px 60px;
-  margin: 20px -60px
-}
-
-.signup-session .account-form {
-  max-width: 400px;
-  margin: 0 auto;
-  overflow: auto
-}
-
-.signup-session img {
-  width: 17px;
-  float: left;
-  padding-right: 33px
-}
 /*Sign page*/
 
