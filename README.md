@@ -46,6 +46,11 @@ To stop mongoDB server press :
 ```
 ctrl+c
 ```
+To check if Mongo db server is running open new treminal window and there access mongo DB shell:
+
+```
+mongo
+```
 
 
 Now lets install Node JS.Use this command in terminal:
