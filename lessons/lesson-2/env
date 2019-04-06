@@ -1,0 +1,5 @@
+MAIL_SERVICE = gmail
+EMAIL_USER_NAME = gmail@gmail.com
+EMAIL_PASSWORD = email password
+DB_PATH = mongodb://localhost:27017/signup
+RECORD_EXPIRY_TIME = 2
