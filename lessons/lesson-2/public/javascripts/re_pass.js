@@ -9,6 +9,22 @@ $(document).ready(function() {
         }
     }
 
+    function checkStatus() {
+
+        if( $('#firstname').val() != '' &&
+            $('#lastname').val() != '' &&
+            $('#email').val() != '' &&
+            $('#password').val() != '' &&
+            $('#re_password').val() != '' &&
+            $("#checkbox").is(':checked')){
+            $("#signup_button").removeAttr("disabled");
+        } else {
+            $("#signup_button").attr("disabled","disabled");
+        }
+
+    }
+
+
     $("#password").on('input', function(){
         var input_val = $('#password').val();
         var input_length = $('#password').val().replace(/\s+/g, '').length;
@@ -29,14 +45,18 @@ $(document).ready(function() {
             $("#signup").attr("disabled","disabled");
             $("#password").addClass("pass_border");
         }
+
     });
 
-    setInterval(function() {
-        if($('#firstname').val() != '' && $('#lastname').val() != '' && $('#email').val() != '' && $('#password').val() != '' && $('#re_password').val() != '' && $("#checkbox").is(':checked')){
-            $("#signup").removeAttr("disabled");
-        } else {
-            $("#signup").attr("disabled","disabled");
-        }
-    },200);
+
+
+document.addEventListener('mousemove', function() {
+    checkStatus();
+});
+    $("input[type='checkbox']").change(function() {
+        checkStatus();
+    });
 
 });
+
+
