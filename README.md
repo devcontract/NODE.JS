@@ -52,6 +52,28 @@ To check if Mongo db server is running open new treminal window and there access
 mongo
 ```
 
+Default MongoDB Port
+
+The following table lists the default TCP ports used by MongoDB:
+
+Default Port	Description
+
+```
+27017	The default port for mongod and mongos instances. You can change this port with port or --port.
+27018	The default port for mongod when running with --shardsvr command-line option or the shardsvr value for the clusterRole setting in a configuration file.
+27019	The default port for mongod when running with --configsvr command-line option or the configsvr value for the clusterRole setting in a configuration file.
+```
+
+If you have any problems starting Mongo DB server , you can check if it is already running and kill the process by following command:
+
+```
+$ pgrep mongo
+30588
+$ kill 30588
+
+```
+first command will get process id , second kills the process
+
 
 Now lets install Node JS.Use this command in terminal:
 
