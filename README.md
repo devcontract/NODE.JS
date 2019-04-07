@@ -28,10 +28,10 @@ Make sure that the /data/db directory has the right permissions by running
 sudo chown -R `id -un` /data/db
 ```
 
-To start Mongodb server run following commands:
+To start Mongodb server on port 27017 run following commands:
 
 ```
-mongod
+mongod --port 27017
 ```
 
 
