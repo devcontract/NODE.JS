@@ -35,12 +35,6 @@ mongod --port 27017
 ```
 
 
-By default Mongodb is listening port 27017 
-
-```
-...waiting for connections on port 27017
-```
-
 To stop mongoDB server press :
 
 ```
