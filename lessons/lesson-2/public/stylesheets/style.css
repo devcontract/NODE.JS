@@ -5,14 +5,27 @@ body {
   background: #0368cf;
   min-width:215px;
 }
+
+.navbar {
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
 a,a:hover{
   color:white;
+}
+
+span a{
+  color:#0069cf;
 }
 
 .terms{
   font-size:12px;
   text-align:center;
-
 
 }
 
@@ -63,7 +76,7 @@ input[name=lastname]{
   height:auto;
   padding:24px;
   background-color:white;
-  border-radius:5px;
+  border-radius:5px;e
 
 }
 
