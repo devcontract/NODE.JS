@@ -18,7 +18,7 @@ body {
 .dropdown-menu{
     background-color:transparent;
     border:1px solid white;
-
+    max-width:100px;
 
 }
 .dropdown-menu a{
