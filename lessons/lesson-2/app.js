@@ -5,6 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 var mongoose = require('mongoose');
 
 var passport =  require('passport');
@@ -18,7 +19,7 @@ require('dotenv').config();
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/signup', { useNewUrlParser: true });
+mongoose.connect(process.env.DB_PATH, { useNewUrlParser: true });
 
 require('./config/passport');
 
