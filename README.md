@@ -88,6 +88,14 @@ Now install all dependencies with node packet manager:
 npm install
 ```
 
+To update al packges :
+
+```
+npm update --save
+
+```
+
+
 You will need to create .env file in folder with the following content :
 
 ```
