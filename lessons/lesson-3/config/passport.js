@@ -28,7 +28,7 @@ passport.use('local.signup', new LocalStrategy({
                 return done(err);
             }
             if (user){
-                return done(null, false, {message:'Email is in use'});
+                return done(null, false, {message:'Email is in use please try one more time'});
             }
 
             var newUser = new User();
@@ -40,7 +40,8 @@ passport.use('local.signup', new LocalStrategy({
                 if(err){
                     return done(err, false);
                 }
-                return done(null, newUser);
+                req.flash('success','Thank you for registration');
+                return done(null, newUser );
             });
 
         });
@@ -60,10 +61,10 @@ passport.use('local.signin', new LocalStrategy({
           return done(err, false);
       }
         if(!user){
-          return done(err, false , {message:'User not found'});
+          return done(err, false , {message:'User not found please try one more time'});
         }
         if(!user.validPassword(password)){
-          return done(null, false, {message:'Wrong Password'});
+          return done(null, false, {message:'Incorrect password please try one more time'});
         }
         return done(null, user);
     });

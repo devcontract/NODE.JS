@@ -1,0 +1,107 @@
+
+body {
+
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: #0368cf;
+    min-width:215px;
+}
+
+.navbar {
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    z-index: 100;
+    transition: background-color 1s ease 0s;
+}
+
+.dropdown-menu{
+    background-color:transparent;
+    border:1px solid white;
+    max-width:100px;
+
+}
+.dropdown-menu a{
+    color:white;
+    letter-spacing:0.1em;
+    transition:0.6s;
+}
+
+a,a:hover{
+    color:white;
+}
+
+span a{
+    color:#0069cf;
+}
+
+.terms{
+    font-size:12px;
+    text-align:center;
+
+}
+
+.header{
+    color:white;
+    text-align:center;
+    margin: 40px 0;
+}
+
+input[type=checkbox]{
+    margin: 0px 10px 0px 0px;
+}
+
+.names{
+    display:flex;
+    justify-content:space-between;
+}
+
+.control-group{
+    float:right;
+    width: calc(100% - 200px);
+}
+
+.pass_border{
+    border:0.5px solid red !important;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(255,0,0,0.52) !important;
+    -moz-box-shadow: 0px 0px 8px 0px rgba(255,0,0,0.52) !important;
+    box-shadow: 0px 0px 8px 0px rgba(255,0,0,0.52) !important;
+}
+
+.signup-control-group{
+    margin:20px 0px;
+}
+
+.signup-form{
+    margin: 0 auto;
+    width:422px;
+    height:auto;
+    padding:24px;
+    background-color:white;
+    border-radius:5px;
+
+}
+
+.signin-form{
+    margin: 0 auto;
+    width:400px;
+    height:auto;
+    padding:24px;
+    background-color:white;
+    border-radius:5px;
+
+}
+
+
+.footer{
+    margin:0 auto;
+    width:400px;
+    margin-top:30px;
+    color:white;
+}
+
+
+
+
+/*Sign page*/
+
