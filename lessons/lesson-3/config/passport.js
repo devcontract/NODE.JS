@@ -63,10 +63,10 @@ passport.use('local.signin', new LocalStrategy({
           return done(err, false);
       }
         if(!user){
-          return done(err, false , {message:'User not found please try one more time'});
+          return done(err, false , {message:'Invalid Username or Password'});
         }
         if(!user.validPassword(password)){
-          return done(null, false, {message:'Incorrect password please try one more time'});
+          return done(null, false, {message:'Invalid Username or Password'});
         }
         return done(null, user);
     });
