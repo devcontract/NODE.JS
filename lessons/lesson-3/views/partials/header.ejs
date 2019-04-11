@@ -5,6 +5,23 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    <ul class="dropdown-menu">
+
+        <% if(login){ %>
+
+        <li><a href="/user/profile">User Account</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/user/remove">Remove Account</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/user/logout">Logout</a></li>
+
+        <% } else{ %>
+        <li><a href="/user/signup">Sign Up</a></li>
+        <li><a href="/user/signin">Sign In</a></li>
+        <% } %>
+    </ul>
+
+
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <!-- Dropdown -->

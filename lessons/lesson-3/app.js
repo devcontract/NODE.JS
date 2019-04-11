@@ -41,6 +41,7 @@ app.use(cookieParser());
 app.use(session({secret: '123'}));
 app.use(flash());
 app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -53,6 +54,8 @@ app.use(function (req, res, next) {
 
 app.use('/user', userRouter);
 app.use('/', indexRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,6 +74,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+
 
 module.exports = app;
 

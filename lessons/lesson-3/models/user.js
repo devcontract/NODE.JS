@@ -12,7 +12,6 @@ var userSchema = new Schema({
     lastname:{type: String, required: true}
 });
 
-userSchema.index( { "expireAt": 1 }, { expireAfterSeconds: 0 } );
 
 userSchema.methods.encryptPassword = function(password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(5), null);

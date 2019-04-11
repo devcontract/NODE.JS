@@ -32,13 +32,27 @@ router.get('/signin', function (req, res, next ) {
     res.render('user/signin',{messages:messages, hasErrors: messages.length > 0, isSuccess: success.length > 0, success: success});
 });
 
-router.get('/profile',function(req,res,next) {
+router.get('/profile', isLoggedIn ,function(req,res,next) {
     res.render('user/profile');
 });
 
-router.use('/', function(req, res, next){
+router.get('/logout', isLoggedIn ,function (req, res, next) {
+    req.logout();
+    res.redirect('/');
+});
+
+router.use('/' , function(req, res, next){
     next();
 });
 
 
 module.exports = router;
+
+
+function isLoggedIn(req, res, next) {
+    console.log(req.isAuthenticated());
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}
