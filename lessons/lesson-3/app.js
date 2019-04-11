@@ -4,7 +4,7 @@ var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var flash = require('express-flash');
+var flash = require('connect-flash');
 var logger = require('morgan');
 
 
