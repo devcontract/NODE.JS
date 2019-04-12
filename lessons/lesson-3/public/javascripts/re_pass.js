@@ -48,6 +48,7 @@ document.addEventListener('input', function() {
     checkStatus();
 });
     $("input[type='checkbox']").change(function() {
+        passCheck();
         checkStatus();
     });
 
