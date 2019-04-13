@@ -43,7 +43,6 @@ passport.use('local.signup', new LocalStrategy({
                     return done(err, false);
                 }
                 req.flash('success','Thank you for registration');
-                req.flash('success','And again Thank you for registration');
                 return done(null, newUser );
             });
 

@@ -30,7 +30,7 @@
             <% if(login){ %>
 
             <li>
-                <a class="nav-link" href="/user/profile">User Account</a>
+                <a class="nav-link" href="/user/profile">User Account <%= login %> </a>
             </li>
 
             <li>
@@ -40,7 +40,6 @@
             <li>
                 <a class="nav-link" href="/user/logout">Logout</a>
             </li>
-
 
             <% } else{ %>
             <li class="nav-item">
@@ -52,6 +51,5 @@
             </li>
             <% } %>
         </ul>
-
     </div>
 </nav>

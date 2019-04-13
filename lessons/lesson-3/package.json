@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=production node ./bin/www",
-    "dev": " NODE_ENV=development node ./bin/www",
+    "dev": " NODE_ENV=development nodemon ./bin/www",
     "debug": "NODE_ENV=development node --inspect-brk ./bin/www"
   },
   "dependencies": {
