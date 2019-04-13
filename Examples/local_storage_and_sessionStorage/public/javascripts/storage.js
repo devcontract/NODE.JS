@@ -31,3 +31,12 @@ document.getElementById('remSeissionLocalStorage').addEventListener("click", fun
     sessionStorage.removeItem(key);
 })
 
+document.getElementById('showLocalStorage').addEventListener("click", function () {
+  var ls =  localStorage.getItem(key);
+  console.log(ls);
+})
+
+document.getElementById('showSessionStorage').addEventListener("click", function () {
+   var ss = sessionStorage.getItem(key);
+    console.log(ss);
+})
