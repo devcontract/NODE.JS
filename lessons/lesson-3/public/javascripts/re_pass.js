@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
     function checkStatus() {
+        var input_length = $('#password').val().replace(/\s+/g, '').length;
+
         if( $('input').val() != '' &&
-            $("#checkbox").is(':checked')){
+            $("#checkbox").is(':checked') && input_length > 7 ){
             if(passCheck()){
                 $("#signup_button").removeAttr("disabled");
             }
@@ -29,6 +31,7 @@ $(document).ready(function() {
         var input_length = $('#password').val().replace(/\s+/g, '').length;
         if (input_val != ""){
             $("#re_password_div").removeAttr("hidden").show();
+
         } else{
             $("#re_password").val('');
             $("#re_password_div").hide();
