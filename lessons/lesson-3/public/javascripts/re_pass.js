@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
     function passCheck(){
-        if($("#password").val() === $("#re_password").val()){
+        if($("#password").val() === $("#re_password").val() && $("#password").val() != $("#email").val() ){
             $("#re_password").removeClass("pass_border");
             $("#signup").removeAttr("disabled");
             return true;
