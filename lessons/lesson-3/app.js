@@ -26,7 +26,12 @@ var app = express();
 
 
 
-mongoose.connect(process.env.DB_PATH, { useNewUrlParser: true });
+//mongoose.createConnection(process.env.DB_PATH, { useNewUrlParser: true });
+
+mongoose.createConnection('mongodb://'+process.env.DB_HOSTNAME+':'+process.env.DB_PORT+'/'+process.env.DB, {
+    useNewUrlParser: true
+});
+
 
 require('./config/passport');
 

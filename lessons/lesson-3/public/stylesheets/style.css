@@ -101,7 +101,14 @@ input[type=checkbox]{
 }
 
 
+.navbar-collapse{
+    position:relative;
 
+}
 
+.navbar-nav{
+    position:absolute;
+    right:0px;
+}
 /*Sign page*/
 
