@@ -15,9 +15,12 @@ router.post('/signup',
 
 
 router.get('/signup', function (req, res, next ) {
+
     var messages = req.flash('error');
 
-    res.render('user/signup',{messages:messages, hasErrors: messages.length > 0});
+    res.render('user/signup',{
+        flash_error:messages,
+        hasErrors: messages.length > 0});
 });
 
 router.post('/signin',
@@ -30,7 +33,11 @@ router.post('/signin',
 router.get('/signin', function (req, res, next ) {
     var messages = req.flash('error');
     var success = req.flash('success');
-    res.render('user/signin',{messages:messages, hasErrors: messages.length > 0, isSuccess: success.length > 0, success: success});
+    res.render('user/signin',{
+        flash_error:messages,
+        hasErrors: messages.length > 0,
+        isSuccess: success.length > 0,
+        flash_success: success});
 });
 
 router.get('/profile', isLoggedIn ,function(req,res,next) {

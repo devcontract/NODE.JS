@@ -10,8 +10,8 @@
             {%>
             <div class="alert alert-danger text-center">
 
-                <% messages.forEach(function(message){ %>
-                <p><%= message%></p>
+                <% flash_error.forEach(function(flash_error){ %>
+                <p><%= flash_error%></p>
                 <% });%>
             </div>
             <% }%>
