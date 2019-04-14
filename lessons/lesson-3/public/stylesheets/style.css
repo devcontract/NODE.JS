@@ -3,22 +3,21 @@ body {
 
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background: #0368cf;
-    min-width:215px;
+    min-width:465px;
 }
 
-.navbar {
-    height: 80px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    z-index: 100;
-    transition: background-color 1s ease 0s;
+.navbar-collapse{
+    text-align:center;
+    letter-spacing:0.2em;
 }
 
 .dropdown-menu{
     background-color:transparent;
     border:1px solid white;
-    max-width:100px;
+    max-width:100%;
+    text-align:center;
+
+
 
 }
 .dropdown-menu a{
@@ -101,14 +100,4 @@ input[type=checkbox]{
 }
 
 
-.navbar-collapse{
-    position:relative;
-
-}
-
-.navbar-nav{
-    position:absolute;
-    right:0px;
-}
-/*Sign page*/
 
