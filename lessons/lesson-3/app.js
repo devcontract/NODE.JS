@@ -25,6 +25,7 @@ var app = express();
 
 
 
+
 mongoose.connect(process.env.DB_PATH, { useNewUrlParser: true });
 
 require('./config/passport');
