@@ -66,8 +66,8 @@ function onError(error) {
   }
 
   var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+    ? 'Pipe ' + process.env.PORT
+    : 'Port ' + process.env.PORT;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -92,6 +92,6 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
-    : 'port ' + addr.port;
+    : process.env.PORT + addr.port;
   debug('Listening on ' + bind);
 }
