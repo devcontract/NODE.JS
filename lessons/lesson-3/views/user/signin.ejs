@@ -8,8 +8,8 @@
         <%if (isSuccess)
         {%>
         <div class="alert alert-success text-center">
-            <% flash_success.forEach(function(flash_success){ %>
-            <p><%= flash_success%></p>
+            <% signup_flash_success.forEach(function(data_success){ %>
+            <p><%= data_success%></p>
             <% });%>
         </div>
         <% }%>
@@ -17,8 +17,8 @@
         <%if (hasErrors)
         {%>
         <div class="alert alert-danger text-center">
-            <% flash_error.forEach(function(flash_error){ %>
-            <p><%= flash_error%></p>
+            <% signin_flash_error.forEach(function(data_signin_error){ %>
+            <p><%= data_signin_error%></p>
             <% });%>
         </div>
         <% }%>

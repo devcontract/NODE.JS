@@ -16,11 +16,11 @@ router.post('/signup',
 
 router.get('/signup', function (req, res, next ) {
 
-    var messages = req.flash('error');
+    var signup_flash_error_messages = req.flash('signup_flash_error');
 
     res.render('user/signup',{
-        flash_error:messages,
-        hasErrors: messages.length > 0});
+        signup_flash_error:signup_flash_error_messages,
+        hasErrors: signup_flash_error_messages.length > 0});
 });
 
 router.post('/signin',
@@ -31,13 +31,13 @@ router.post('/signin',
     }));
 
 router.get('/signin', function (req, res, next ) {
-    var messages = req.flash('error');
-    var success = req.flash('success');
+    var signin_flash_error_messages = req.flash('signin_flash_error');
+    var signin_flash_success_message = req.flash('signup_flash_success');
     res.render('user/signin',{
-        flash_error:messages,
-        hasErrors: messages.length > 0,
-        isSuccess: success.length > 0,
-        flash_success: success});
+        signin_flash_error:signin_flash_error_messages,
+        hasErrors: signin_flash_error_messages.length > 0,
+        isSuccess: signin_flash_success_message.length > 0,
+        signup_flash_success: signin_flash_success_message});
 });
 
 router.get('/profile', isLoggedIn ,function(req,res,next) {
