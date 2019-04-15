@@ -1,3 +1,6 @@
+require('dotenv').config();
+require('./config/passport');
+
 var createError = require('http-errors');
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
@@ -6,34 +9,16 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
 var logger = require('morgan');
-
-
 var mongoose = require('mongoose');
-
 var passport =  require('passport');
-
 var validator = require('express-validator');
-
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
-
-require('dotenv').config();
-
-
-
 var app = express();
 
 
 
-
-//mongoose.createConnection(process.env.DB_PATH, { useNewUrlParser: true });
-
-mongoose.createConnection('mongodb://'+process.env.DB_HOSTNAME+':'+process.env.DB_PORT+'/'+process.env.DB, {
-    useNewUrlParser: true
-});
-
-
-require('./config/passport');
+mongoose.connect('mongodb://'+ process.env.DB_HOSTNAME +':'+ process.env.DB_PORT +'/' +process.env.DB, { useNewUrlParser: true });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,18 +39,12 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 app.use(function (req, res, next) {
     res.locals.login = req.isAuthenticated();
     next();
 });
-
-
-
 app.use('/user', userRouter);
 app.use('/', indexRouter);
-
 
 
 // catch 404 and forward to error handler
@@ -77,7 +56,6 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
 
     // set locals, only providing error in development
-
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
 
