@@ -1,7 +1,7 @@
 var passport = require('passport');
 var User = require('../models/user');
 var LocalStrategy = require('passport-local').Strategy;
-
+var mailer = require('../misc/mailer');
 
 
 // Configure the local strategy for use by Passport.
@@ -43,6 +43,16 @@ passport.use('local.signup', new LocalStrategy({
                 if(err){
                     return done(err, false);
                 }
+
+                var html = '<body style="background-color:orange"><div style="width: 50%; margin: 0 auto;background-color:orange;margin-top:15%"><hr> ' +
+                    '<p style="text-align: center"> <div style="text-align: center; font-size: 18px ; padding: 5px; margin: 0 0 0 0; width: auto; height: auto; border-radius:3px;">Please verify your email to signin </div> </p>' +
+                    '<p style="text-align:center;"> <a href="'+ process.env.SERVERPATH +' '+ newUser.secretToken +'" style="text-decoration:none;color: whitesmoke;font-size: 18px ; padding: 5px; margin: 10% 0 10% 0; width: auto; height: auto;background-color:dodgerblue;border-radius:3px;">Verify Email</a><hr> ' +
+                    '</body>';
+
+                // send email
+                mailer.sendEmail( 'noreply@gmail.com', newUser.email , 'Activate Your Account!', html);
+
+
                 req.flash('signup_flash_success','Thank you for registration');
                 return done(null, newUser );
             });
