@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
+//var bcrypt = require('bcrypt-nodejs');
+var crypto = require('crypto');
+
+
 require('dotenv');
 
 mongoose.set('useCreateIndex', true);
@@ -10,10 +13,15 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
+    salt: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true
     },
+
     firstname:{
         type: String,
         required: true
@@ -24,14 +32,34 @@ var userSchema = new Schema({
     }
 });
 
+//console.log(crypto.getHashes());
+//console.log(crypto.getCiphers());
 
-userSchema.methods.encryptPassword = function(password){
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(12), null);
-};
+
+function crypt(password, salt){
+    password =  crypto.createHash('sha512')
+        .update(salt + password, 'utf-8')
+        .digest('hex');
+    return password;
+}
+
+
+
+userSchema.methods.encryptPassword = function(password,salt){
+    password = crypt(password, salt);
+    return password;
+    //return bcrypt.hashSync(password, bcrypt.genSaltSync(12), null);
+} ;
 
 
 userSchema.methods.validPassword = function(password){
-    return bcrypt.compareSync(password, this.password);
+
+    if (crypt(password, this.salt) === this.password){
+        return true;
+    } else {
+        return false;
+    }
+    //return bcrypt.compareSync(password, this.password);
 }
 
 

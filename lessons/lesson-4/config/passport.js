@@ -3,7 +3,6 @@ var User = require('../models/user');
 var LocalStrategy = require('passport-local').Strategy;
 var mailer = require('../misc/mailer');
 
-
 // Configure the local strategy for use by Passport.
 
 passport.serializeUser(function(user, done) {
@@ -25,6 +24,30 @@ passport.use('local.signup', new LocalStrategy({
     session: false
 }, function (req, email, password, done) {
 
+
+  /*  req.checkBody('email','email error')
+        .not().isEmpty()
+        .isEmail()
+        .normalizeEmail();
+    req.checkBody('password','password error')
+        .notEmpty()
+        .isLength({min:8})
+        .isLength({max:25});
+    req.checkBody('text','input error')
+        //.not().isEmpty()
+        .trim()
+        .escape();*/
+
+var errors  = req.validationErrors();
+if (errors){
+    var messages = [];
+    errors.forEach((error) =>{
+        messages.push(error.msg);
+    });
+
+    return done(null, false, req.flash('signup_flash_error', messages));
+}
+
         User.findOne({'email': email}, function (err, user) {
             if (err){
                 return done(err);
@@ -34,9 +57,11 @@ passport.use('local.signup', new LocalStrategy({
                 return done(null, false);
             }
 
+
             var newUser = new User();
             newUser.email = email;
-            newUser.password = newUser.encryptPassword(password);
+            newUser.salt = Math.round((Date.now() * Math.random())) + '';
+            newUser.password = newUser.encryptPassword(password,newUser.salt);
             newUser.firstname = req.body.firstname;
             newUser.lastname = req.body.lastname;
             newUser.save(function (err, result) {

@@ -17,7 +17,6 @@ var userRouter = require('./routes/user');
 var app = express();
 
 
-
 mongoose.connect('mongodb://'+ process.env.DB_HOSTNAME +':'+ process.env.DB_PORT +'/' +process.env.DB, { useNewUrlParser: true });
 
 // view engine setup
