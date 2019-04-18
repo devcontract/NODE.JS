@@ -59,7 +59,7 @@ if (errors){
 
 
             var newUser = new User();
-            newUser.email = email;
+            newUser.email = email.toLowerCase();
             newUser.salt = Math.round((Date.now() * Math.random())) + '';
             newUser.password = newUser.encryptPassword(password,newUser.salt);
             newUser.firstname = req.body.firstname;
@@ -94,7 +94,7 @@ passport.use('local.signin', new LocalStrategy({
     passReqToCallback: true,
     session: false
 },function (req,email, password, done) {
-    User.findOne({email:email}, function (err, user) {
+    User.findOne({email:email.toLowerCase()}, function (err, user) {
       if (err){
           return done(err, false);
       }
