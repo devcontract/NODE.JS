@@ -19,15 +19,20 @@ var userSchema = new Schema({
     },
     password: {
         type: String,
+        trim: true,
+        minLength:8,
+        maxLength:22,
         required: true
     },
 
     firstname:{
         type: String,
+        trim: true,
         required: true
     },
     lastname:{
         type: String,
+        trim: true,
         required: true
     }
 });
