@@ -21,7 +21,7 @@ var userSchema = new Schema({
         type: String,
         trim: true,
         minLength:8,
-        maxLength:22,
+      //  maxLength:22,
         required: true
     },
 
