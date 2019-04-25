@@ -8,7 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
 var User = require('./models/shema');
-
+var flash = require('connect-flash');
+var session = require('express-session')
 
 var app = express();
 
@@ -33,6 +34,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: true }
+}))
+app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

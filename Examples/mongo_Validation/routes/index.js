@@ -7,13 +7,12 @@ var flash = require('connect-flash');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { error: 'HERE GOES DB ERROR MESSAGE' });
+router.get('/', function(req, res) {
+
+  res.render('index' );
 });
 
 router.post('/', function (req, res, next) {
-
-
 
 // create a new user
     var newUser = User({
@@ -27,14 +26,13 @@ router.post('/', function (req, res, next) {
 // save the user
     newUser.save(function(err) {
         if (err) {
-
-        return console.log(err);
-        };
+              return console.log(err.message);
+            }
 
         console.log('User created!');
     });
 
- res.redirect('/', req.flash('error'));
+ res.redirect('/');
 });
 
 module.exports = router;
