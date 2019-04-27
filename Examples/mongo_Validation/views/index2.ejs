@@ -11,15 +11,39 @@
 
 
 <div class="container-fluid">
-
+<div class="row">
+  <h1>INDEX 2</h1>
+</div>
   <div class="session">
     <h2 class="header">Create Your account</h2>
 
 
+
     <div class="signup-form">
+
+      <% if(error){ %>
+
+      <div class="alert alert-warning" role="alert">
+        <div class="bottom-part text-center"> <p><%= error %></p></div>
+      </div>
+
+
+      <% } else{ %>
+
+      <div class="alert alert-primary" role="alert">
+
+        <div class="bottom-part text-center"> <p> flash message has not been sent</p></div>
+
+      </div>
+
+      <% }  %>
+
+    </div>
+
       <div class="form">
 
-        <form class="form-vertical" action="/index2" accept-charset="UTF-8" method="post">
+
+        <form class="form-vertical" action="/index" accept-charset="UTF-8" method="post">
           <div class="form-group">
             <div class="names">
               <div class="control-group">
@@ -73,9 +97,7 @@
 
 
 
-<div class="bottom-part text-center"> <p>access point</p></div>
 
-</div>
 
 
 <!-- Optional JavaScript -->

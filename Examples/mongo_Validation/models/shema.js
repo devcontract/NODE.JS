@@ -12,17 +12,12 @@ var userSchema = new Schema({
     },
     salt : {
         type: Number,
-        max: 20,
+        max: 202,
         required: true
     },
     password : {
         type: String,
-        validate:{
-            validator: function (v) {
-                return /^[a-jl-z]+$/i.test(v)
-            },
-            message: props => `${props.value} is not valid password`
-        },
+
         required: true,
 
     },
