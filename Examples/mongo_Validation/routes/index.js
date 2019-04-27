@@ -46,10 +46,13 @@ router.post('/index2', function (req, res, next) {
         //  var errorString = Buffer.from(err).toString();
          //   errorString.replace('ValidationError: ','');
           // console.log(errorString);
-           arrayError = arrayError.toString();
-           arrayError =  arrayError.replace('ValidationError: ','');
+            arrayError = arrayError.toString();
+            arrayError =  arrayError.replace('ValidationError: ','');
+            arrayError =  arrayError.replace(',','');
+            arrayError =  arrayError.replace('.,','');
+            arrayError =  arrayError.replace('required.,','required');
             arrayError = arrayError.trim();
-             arrayError = JSON.parse("[" + arrayError + "]");
+            arrayError = arrayError.split(',');
 
           return res.render('index2', {error: arrayError});
             }

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     email : {
         type: String,
-        required: [true, 'email required'],
+        required: [true, 'is not valid email'],
         lowercase: true,
         match: [/[a-z].+@.+\..+/]
 
@@ -13,12 +13,12 @@ var userSchema = new Schema({
     salt : {
         type: Number,
         max: 202,
-        required: true
+        required: [true, 'is not valid salt']
     },
     password : {
         type: String,
 
-        required: true,
+        required: [true, 'is not valid password']
 
     },
     firstname : {
@@ -29,7 +29,7 @@ var userSchema = new Schema({
             },
             message: props => `${props.value} is not valid firstname`
         },
-        required: true,
+        required:  [true, 'is not valid first name']
 
     },
     lastname : {
@@ -40,7 +40,7 @@ var userSchema = new Schema({
             },
             message: props => `${props.value} is not valid lastname`
         },
-        required: true,
+        required:  [true, 'is not valid last name'],
 
     }
 });
