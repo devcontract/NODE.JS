@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     email : {
         type: String,
-        required: [true, 'email required \n '],
+        required: [true, 'email required'],
         lowercase: true,
         match: [/[a-z].+@.+\..+/]
 

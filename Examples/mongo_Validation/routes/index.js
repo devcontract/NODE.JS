@@ -35,13 +35,23 @@ router.post('/index2', function (req, res, next) {
 
 
             req.flash('error', err);
+
+            var arrayError = [] ;
+            arrayError = req.flash('error');
+
+
+
            // return console.log(err);
 
         //  var errorString = Buffer.from(err).toString();
          //   errorString.replace('ValidationError: ','');
-          //  console.log(errorString);
+          // console.log(errorString);
+           arrayError = arrayError.toString();
+           arrayError =  arrayError.replace('ValidationError: ','');
+            arrayError = arrayError.trim();
+             arrayError = JSON.parse("[" + arrayError + "]");
 
-return res.render('index2', {error: req.flash('error')});
+          return res.render('index2', {error: arrayError});
             }
 
         console.log('User created!');
