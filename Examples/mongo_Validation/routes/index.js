@@ -36,8 +36,10 @@ router.post('/index2', function (req, res, next) {
 
             req.flash('error', err);
            // return console.log(err);
-          var errorString = err.replace(/ValidationError: /g,'')
-            console.log(errorString);
+
+        //  var errorString = Buffer.from(err).toString();
+         //   errorString.replace('ValidationError: ','');
+          //  console.log(errorString);
 
 return res.render('index2', {error: req.flash('error')});
             }
