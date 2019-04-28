@@ -35,7 +35,7 @@ router.post('/index', function (req, res, next) {
 
 
             req.flash('error', err);
-
+            return(err, false);
             //   arrayError = req.flash('error');
 
             // return console.log(err);
@@ -51,7 +51,7 @@ router.post('/index', function (req, res, next) {
              arrayError = arrayError.trim();
              arrayError = arrayError.split(',');*/
 
-            return res.render('index', {error: req.flash('error')});
+          //  return res.render('index', {error: req.flash('error')});
         }
 
         console.log('User created!');
