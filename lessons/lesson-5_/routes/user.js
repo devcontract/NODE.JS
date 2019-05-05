@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
-var flash = require('connect-flash');
+//var flash = require('connect-flash');
 
 
 router.post('/signup',
@@ -10,7 +10,7 @@ router.post('/signup',
         failureRedirect: '/user/signup',
         successRedirect: '/user/signin',
         session: false,
-        failureFlash: true
+        //failureFlash: true
     }));
 
 
@@ -33,8 +33,7 @@ router.post('/signin',
     }));
 
 router.get('/signin' ,function (req, res, next ) {
-   // var signin_errors = req.flash('signin_flash_error');
-   // var signin_success = req.flash('signup_flash_success');
+
     var signin_success = req.app.locals.signup_success;
     var signin_errors = req.app.locals.signin_error;
 

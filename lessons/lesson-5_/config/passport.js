@@ -106,12 +106,12 @@ passport.use('local.signin', new LocalStrategy({
       }
         if(!user){
           //  req.flash('signin_flash_error','Invalid Username or Password');
-            req.app.locals.signin_error = 'oshibka useraname';
+            req.app.locals.signin_error = 'Username error';
           return done(null, false);
         }
         if(!user.validPassword(password)){
            // req.flash('signin_flash_error','Invalid Username or Password');
-            req.app.locals.signin_error = 'oshibka password';
+            req.app.locals.signin_error = 'Password error';
             return done(null, false,{signin_error: 'Invalid Username or Password'});
         }
         return done(null, user);
