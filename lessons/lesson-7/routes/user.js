@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
 var flash = require('connect-flash');
+var passportError = require('../config/passport')
 
 
 router.post('/signup',
@@ -16,7 +17,19 @@ router.post('/signup',
 
 router.get('/signup', function (req, res, next ) {
 
-    var signup_errors = req.flash('signup_flash_error');
+    console.log(passportError.valErrors);
+
+    if(passportError.valErrors){
+     var messages = [];
+    passportError.valErrors.forEach((error) =>{
+           messages.push(error.msg);
+       });
+
+       req.flash('signup_flash_error', messages);
+
+    }
+
+       var  signup_errors = req.flash('signup_flash_error');
 
         res.render('user/signup',{
         signup_flash_error:signup_errors,

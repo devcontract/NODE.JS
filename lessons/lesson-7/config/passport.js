@@ -26,7 +26,7 @@ passport.use('local.signup', new LocalStrategy({
 }, function (req, email, password, done) {
 
 
-  /*  req.checkBody('email','email error')
+    req.checkBody('email','email error')
         .not().isEmpty()
         .isEmail()
         .normalizeEmail();
@@ -37,16 +37,15 @@ passport.use('local.signup', new LocalStrategy({
     req.checkBody('text','input error')
         //.not().isEmpty()
         .trim()
-        .escape();*/
+        .escape();
 
 var errors  = req.validationErrors();
-if (errors){
-    var messages = [];
-    errors.forEach((error) =>{
-        messages.push(error.msg);
-    });
 
-    return done(null, false, req.flash('signup_flash_error', messages));
+if (errors){
+
+    module.exports.valErrors = errors;
+
+    return done(null, false );
 }
 
         User.findOne({'email': email}, function (err, user) {
