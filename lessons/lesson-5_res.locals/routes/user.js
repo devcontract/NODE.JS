@@ -4,6 +4,13 @@ var passport = require('passport');
 var User = require('../models/user');
 //var flash = require('connect-flash');
 
+router.use('/signin', function (req, res, next) {
+    console.log('Request URL:', req.originalUrl)
+    next()
+}, function (req, res, next) {
+    console.log('Request Type:', req.method)
+    next()
+})
 
 router.post('/signup',
     passport.authenticate('local.signup', {
@@ -29,7 +36,7 @@ router.post('/signin',
         passport.authenticate('local.signin',{
         failureRedirect:'/user/signin',
         successRedirect:'/user/profile',
-        failureFlash: true
+      //  failureFlash: true
     }));
 
 router.get('/signin' ,function (req, res, next ) {
@@ -54,9 +61,6 @@ router.get('/logout', isLoggedIn ,function (req, res, next) {
     res.redirect('/');
 });
 
-router.use('/' , function(req, res, next){
-    next();
-});
 
 
 module.exports = router;
