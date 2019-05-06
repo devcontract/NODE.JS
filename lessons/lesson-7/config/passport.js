@@ -43,9 +43,9 @@ var errors  = req.validationErrors();
 
 if (errors){
 
-    module.exports.valErrors = errors;
+    req.app.set('validErrors', errors);
 
-    return done(null, false );
+    return done(null, false);
 }
 
         User.findOne({'email': email}, function (err, user) {
