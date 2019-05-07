@@ -57,7 +57,6 @@ if (errors){
                 return done(null, false);
             }
 
-
             var newUser = new User();
             newUser.email = email.toLowerCase();
             newUser.salt = crypto.randomBytes(128).toString('base64');

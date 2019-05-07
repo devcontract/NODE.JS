@@ -17,7 +17,6 @@ router.post('/signup',
 
 router.get('/signup', function (req, res, next ) {
 
-
     var passportError = req.app.get('validErrors');
  //   console.log(passportError);
  //   console.log('-------');

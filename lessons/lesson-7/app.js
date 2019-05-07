@@ -30,6 +30,7 @@ app.use(validator());
 app.use(cookieParser());
 app.use(session({
     secret: process.env.SECRET,
+    cookie:{maxAge:6000},
     saveUninitialized: false,
     resave: false
     }

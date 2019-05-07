@@ -11,41 +11,40 @@ mongoose.set('useCreateIndex', true);
 var userSchema = new Schema({
     email : {
         type: String,
-        required: [true, 'is not valid email'],
+        required: [true, 'not a valid email'],
         lowercase: true,
-        match: [/[a-z].+@.+\..+/]
+        match: [/[a-z].+@.+\..+/]    // only email@company.domain validator
 
     },
     salt : {
        type : String,
-        required: [true, 'is not valid salt']
+        required: true,
     },
     password : {
         type: String,
-
-        required: [true, 'is not valid password']
+        required: [true, 'not a valid password']
 
     },
     firstname : {
         type: String,
         validate:{
             validator: function (v) {
-                return /^[a-z]+$/i.test(v);
+                return /^[a-z]+$/i.test(v);    // no digits in name validator
             },
-            message: props => `${props.value} is not valid firstname`
+            message: props => `${props.value} not a valid firstname`
         },
-        required:  [true, 'is not valid first name']
+        required:  [true, 'not a valid first name']
 
     },
     lastname : {
         type: String,
         validate:{
             validator: function (v) {
-                return /^[a-z]+$/i.test(v);
+                return /^[a-z]+$/i.test(v); // no digits in last name validator
             },
-            message: props => `${props.value} is not valid lastname`
+            message: props => `${props.value} not a valid last name`
         },
-        required:  [true, 'is not valid last name'],
+        required:  [true, 'not a valid last name'],
 
     }
 });
@@ -53,9 +52,6 @@ var userSchema = new Schema({
 
 //console.log(crypto.getHashes());
 //console.log(crypto.getCiphers());
-
-
-
 
 function crypt(password, salt){
 
@@ -65,8 +61,6 @@ function crypt(password, salt){
     return password;
 
 }
-
-
 
 userSchema.methods.encryptPassword = function(password,salt){
      password = crypt(password, salt);

@@ -4,11 +4,13 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background: #0368cf;
     min-width:465px;
+
 }
 
 .navbar-collapse{
     text-align:center;
     letter-spacing:0.2em;
+
 }
 
 .dropdown-menu{
@@ -44,6 +46,11 @@ span a{
     color:white;
     text-align:center;
     margin: 40px 0;
+    letter-spacing:0.07em;
+  /*  background-image: radial-gradient(circle, #ffffff45, #468fda00, #0968cf); /* Standard syntax (must be last) */
+   /* background-repeat:repeat-y;
+    background-size: cover;
+*/
 }
 
 input[type=checkbox]{
@@ -102,7 +109,9 @@ input[type=checkbox]{
     width: 100%;
     height: 2.5rem;
     color:white;
+
 }
+
 
 
 
