@@ -15,7 +15,7 @@ var validator = require('express-validator');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var app = express();
-
+var validErrors ='';
 
 mongoose.connect('mongodb://'+ process.env.DB_HOSTNAME +':'+ process.env.DB_PORT +'/' +process.env.DB, { useNewUrlParser: true });
 

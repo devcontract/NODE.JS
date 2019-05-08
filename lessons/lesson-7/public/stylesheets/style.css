@@ -47,10 +47,10 @@ span a{
     text-align:center;
     margin: 40px 0;
     letter-spacing:0.07em;
-  /*  background-image: radial-gradient(circle, #ffffff45, #468fda00, #0968cf); /* Standard syntax (must be last) */
-   /* background-repeat:repeat-y;
-    background-size: cover;
-*/
+    /*  background-image: radial-gradient(circle, #ffffff45, #468fda00, #0968cf); /* Standard syntax (must be last) */
+    /* background-repeat:repeat-y;
+     background-size: cover;
+ */
 }
 
 input[type=checkbox]{
@@ -113,6 +113,18 @@ input[type=checkbox]{
 }
 
 
+div.col-sm{
+    height:200px;
+    padding:50%;
+    border:#0e58a9 solid 1px;
+    transition:2s;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 100s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
 

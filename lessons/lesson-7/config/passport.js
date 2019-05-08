@@ -42,8 +42,8 @@ passport.use('local.signup', new LocalStrategy({
 var errors  = req.validationErrors();
 
 if (errors){
-
-    req.app.set('validErrors', errors);
+   module.exports.validErrors = error;
+    //req.app.set('validErrors', errors);
 
     return done(null, false);
 }

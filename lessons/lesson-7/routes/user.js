@@ -3,8 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
 var flash = require('connect-flash');
-
-
+var passportConfig = require('../config/passport');
 
 router.post('/signup',
     passport.authenticate('local.signup', {
@@ -17,7 +16,7 @@ router.post('/signup',
 
 router.get('/signup', function (req, res, next ) {
 
-    var passportError = req.app.get('validErrors');
+    var passportError = passportConfig.validErrors;
  //   console.log(passportError);
  //   console.log('-------');
     if(passportError){
@@ -27,7 +26,8 @@ router.get('/signup', function (req, res, next ) {
 
        });
         req.flash('signup_flash_error', messages);
-        res.app.set('validErrors', '');
+       // res.app.set('validErrors', '');
+        passportConfig.validErrors = '';
     }
 
        var  signup_errors = req.flash('signup_flash_error');
