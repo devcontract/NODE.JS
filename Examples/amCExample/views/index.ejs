@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+  <body>
+
+  <script src="//www.amcharts.com/lib/4/core.js"></script>
+  <script src="//www.amcharts.com/lib/4/charts.js"></script>
+
+  <div class="holder">
+    <div id="chartdiv" style="width: 400px; height:300px"></div>
+    <div class="bar"><img src="/images/mylogo.png" alt=""></div>
+  </div>​
+
+
+
+  <script>
+      // Create chart instance
+      var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+      // Create pie series
+      var series = chart.series.push(new am4charts.PieSeries());
+      series.dataFields.value = "litres";
+      series.dataFields.category = "country";
+
+      // Add data
+      chart.data = [{
+          "country": "Lithuania",
+          "litres": 501.9
+      }, {
+          "country": "Czech Republic",
+          "litres": 301.9
+      }, {
+          "country": "Ireland",
+          "litres": 201.1
+      }, {
+          "country": "Germany",
+          "litres": 165.8
+      }, {
+          "country": "Australia",
+          "litres": 139.9
+      }, {
+          "country": "Austria",
+          "litres": 128.3
+      }, {
+          "country": "UK",
+          "litres": 99
+      }, {
+          "country": "Belgium",
+          "litres": 60
+      },{
+
+      }];
+
+      // And, for a good measure, let's add a legend
+      chart.legend = new am4charts.Legend();
+  </script>
+  </body>
+</html>
